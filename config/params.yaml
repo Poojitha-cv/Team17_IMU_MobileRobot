@@ -1,0 +1,17 @@
+tilt_detector:
+  ros__parameters:
+    tilt_enter: 15.0
+    tilt_exit:  10.0
+    alpha:       0.2
+    imu_topic:  "/imu/data"
+
+motion_classifier:
+  ros__parameters:
+    alpha:             0.3
+    lin_x_threshold:   0.15
+    ang_z_threshold:   0.10
+
+imu_reader:
+  ros__parameters:
+    alpha:    0.2
+    log_file: "~/imu_logs/imu_log.csv"

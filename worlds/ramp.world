@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="ramp_world">
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Flat approach surface so robot starts on solid ground -->
+    <model name="approach_pad">
+      <static>true</static>
+      <link name="link">
+        <collision name="col">
+          <geometry><box><size>1.2 1.0 0.02</size></box></geometry>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>1.2 1.0 0.02</size></box></geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <!-- Sits right in front of spawn point (x=-1.0) -->
+      <pose>-0.2 0 0.01 0 0 0</pose>
+    </model>
+
+    <!-- Ramp: tilted ~22 deg (above 15 deg threshold) -->
+    <model name="ramp">
+      <static>true</static>
+      <link name="link">
+        <collision name="col">
+          <geometry><box><size>1.4 1.0 0.04</size></box></geometry>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>1.4 1.0 0.04</size></box></geometry>
+          <material>
+            <ambient>0.8 0.6 0.3 1</ambient>
+            <diffuse>0.8 0.6 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <!-- x=1.0 puts it ahead of the spawn point; pitch 0.38 rad ≈ 22 deg -->
+      <pose>1.0 0 0.28 0 -0.38 0</pose>
+    </model>
+
+  </world>
+</sdf>
