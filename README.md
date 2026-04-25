@@ -114,8 +114,14 @@ sudo apt install ros-humble-gazebo-ros-pkgs \
 ## 🔧 Build
 
 ```bash
+# Clone the repo
+git clone https://github.com/Poojitha-cv/Team17_IMU_MobileRobot.git
+cd Team17_IMU_MobileRobot
+
+# Source ROS2
 source /opt/ros/humble/setup.bash
-cd ~/ros2_ws_imu
+
+# Build
 colcon build --symlink-install
 source install/setup.bash
 ```
@@ -144,8 +150,10 @@ cat ~/imu_logs/imu_log.csv
 ```bash
 ros2 run imu_robot imu_graph
 ```
-
 ---
+
+
+
 
 ## 👩‍💻 Poojitha CV — Robot Simulation Design + Tilt Detection
 
